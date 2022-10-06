@@ -1,14 +1,12 @@
 <?php
-  include('../config/config.php');
-  include('estudiante.php'); /* revisar si funciona o borrar */
+  include_once('../config/config.php');
+  include('estudiante.php'); 
 
   if(isset($_POST) && !empty($_POST)){
-    $estudiante = new estudiante();
-    if($_FILES['image']['name'] !== ''){
-      $_POST['image'] = saveImage($_FILES);
-    }
+    $p = new estudiante();
+   
 
-    $save = $estudiante->save($_POST);
+    $save = $p->save($_POST);
     if($save){
       $error = '<div class="alert alert-success" role="alert">Estudiante creado correctamente</div>';
       }else{
@@ -42,48 +40,43 @@
     ?>
      <h2 class="text-center mb-5" >Completa tus datos</h2>
      <form method="POST" enctype="multipart/form-data" >
-      <div class="row mb-2"> 
+      
+     <div class="row mb-2"> 
         <div class="col">
-          <input type="text" name="nombre estudiante" id="nombre estudiante" Placeholder="Nombre del estudiante" class="form-control" /> 
+          <input type="text" name="nombreestudiante" id="nombreestudiante" Placeholder="Nombre del estudiante" class="form-control" /> 
         </div>
         <div class="col">
-         <input type="text" name="documento de identidad" id="documento de identidad" Placeholder="Número documento de identidad del estudiante" class="form-control"> 
+         <input type="text" name="documentodeidentidad" id="documentodeidentidad" Placeholder="Número documento de identidad del estudiante" class="form-control"> 
        </div>
       </div>
 
       <div class="row mb-2">
         <div class="col">
-         <input type="date-time-local" name="fecha nacimiento" id="fecha nacimiento" Placeholder="Fecha de nacimiento del estudiante" class="form-control"> 
+         <input type="date" name="fechanacimiento" id="fechanacimiento" Placeholder="Fecha de nacimiento del estudiante" class="form-control"> 
         </div>
         <div class="col">
-         <input type="number" name="grado a matricular" id="grado a matricular" Placeholder="Grado 0°,1°,2°,3°,4°,5°" class="form-control"> 
+         <input type="number" name="gradoamatricular" id="gradoamatricular" Placeholder="Grado 0°,1°,2°,3°,4°,5°" class="form-control"> 
         </div>
       </div>
    
       <div class="row mb-2">
           <div class="col">
-              <input type="text" name="padre o acudiente" id="padre o acudiente" Placeholder="Nombre del padre o acudiente" class="form-control"> 
+              <input type="text" name="padreoacudiente" id="padreoacudiente" Placeholder="Nombre del padre o acudiente" class="form-control"> 
           </div>
           <div class="col">
-             <input type="text" name="documento identidad" id="documento identidad" Placeholder="Número de documento identidad padre o acudiente" class="form-control"> 
+             <input type="text" name="documentoidentidad" id="documentoidentidad" Placeholder="Número de documento identidad padre o acudiente" class="form-control"> 
           </div>
        </div>
 
         <div class="row mb-2">
           <div class="col">
-              <input type="text" name="teléfono" id="teléfono" Placeholder="Número de teléfono padre o acudiente" class="form-control"> 
+              <input type="number" name="telefono" id="telefono" Placeholder="Número de telefono padre o acudiente" class="form-control"> 
           </div>
           <div class="col">
-              <input type="text" name="sede educativa" id="sede educativa" Placeholder="Nombre sede educativa a matricular" class="form-control"> 
+              <input type="text" name="sedeeducativa" id="sedeeducativa" Placeholder="Nombre sede educativa a matricular" class="form-control"> 
            </div>
        </div>
 
-       <div class="row mb-2" >
-         <div class="col">
-           <input type="file" name="image" id="image"  Class="form-control" />
-
-          </div>   
-       </div>
 
     <button class="btn btn-success"> Registrar </button>
     </form>

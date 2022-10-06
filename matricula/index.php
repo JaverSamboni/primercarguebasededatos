@@ -8,7 +8,7 @@ $allmatricula = $p->getAll();
 if(isset($_GET['id']) && !empty($_GET['id'])) {
     $remove = $p->remove($_GET['id']);
     if ($remove) {
-        header('Location: ' . ROOT . 'estudiante/index.php');
+        header('Location: ' . ROOT . 'matricula/index.php');
     } else {
         $msj = "<div class= 'alert alert-danger' rol='alert' > Error al eliminar agenda. </div> ";
     }
@@ -27,22 +27,23 @@ if(isset($_GET['id']) && !empty($_GET['id'])) {
 </head>
 
 <body>
-    <?php include('../menu.php') ?><!-- revisar, borrar o cambiar  no tengo archivo menu -->
+    <?php include('../menu.php') ?>
     <div class="container">
         <h2 class="text-center mb-5"> Lista estudiantes </h2>
 
         <div class="row">
             <?php
             while($estudiante = mysqli_fetch_object($allmatricula)){
-                $input = $estudiante->sessionDate;
-                echo "<div class='col' >";
+                
+                echo "<div class='col-6' >";
                 echo "<div class='border border-info p-2'> ";
                 echo "<h5>
-                        <img src='".ROOT."/images/$estudiante->image' Width='50' heigth='50' />
-                        $estudiante->Name
+                        
+                        Nombre: $estudiante->nombreestudiante  <br>
+                        Documento: $estudiante->documentodeidentidad
                         </h5> ";
-                echo " <p> <b>Fecha:</b> ".date("D", strtotime($input)) . " " . date("d-M-Y H:i", strtotime($input)). "</p>";
-                echo "<div class='text-center' ><a class='btn btn-success' href='" . ROOT . "/matricula/edit.php?id=$estudiante->id' > Modificar </a> - <a class='btn btn-danger' href='" . ROOT . "/matricula/index.php?id=$estudiante->id' > Eliminar </a> </div>";
+           
+                echo "<div class='center'> <a class='btn btn-success' href='". ROOT ."/matricula/edit.php?id=$estudiante->id' >Modificar</a> - <a class='btn btn-danger' href='". ROOT ."/matricula/index.php?id=$estudiante->id' >Eliminar</a> </div>";;
                 echo "</div>";
                 echo "</div>";
             }

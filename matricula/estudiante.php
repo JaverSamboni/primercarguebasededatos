@@ -12,23 +12,23 @@
     }
 
     function save($params){
-        $name = $params['nombre estudiante'];
-        $identification = $params['documento de identidad'];
-        $date = $params['fecha nacimiento'];
-        $degree = $params['grado a matricular'];
-        $family = $params['padre o acudiente'];
-        $identification = $params['documento identidad'];
-        $phone = $params['teléfono'];
-        $campus = $params['sede educativa'];
-        $image = $params['imagen'];
+        $nombreestudiante = $params['nombreestudiante'];
+        $documentodeidentidad = $params['documentodeidentidad'];
+        $fechanacimiento = $params['fechanacimiento'];
+        $gradoamatricular = $params['gradoamatricular'];
+        $padreoacudiente = $params['padreoacudiente'];
+        $documentoidentidad = $params['documentoidentidad'];
+        $telefono = $params['telefono'];
+        $sedeeducativa = $params['sedeeducativa'];
+      
 
-        $insert = "INSERT INTO matricula VALUES (NULL, '$name', '$identification', '$date', '$degree', '$family', '$identification', '$phone', '$campus', '$image' ) ";
+        $insert = "INSERT INTO matricula VALUES (NULL, '$nombreestudiante', '$documentodeidentidad', '$fechanacimiento', '$gradoamatricular', '$padreoacudiente', '$documentoidentidad', $telefono, '$sedeeducativa') ";
         return mysqli_query($this->conn, $insert);
     }
   
 
     function getAll(){
-        $sql = "SELECT * FROM matricula ORDER BY sessionDate ASC ";
+        $sql = "SELECT * FROM matricula  ";
         return mysqli_query($this->conn, $sql);
     }
 
@@ -39,17 +39,19 @@
     }
 
     function update($params){
-            $name = $params['nombre'];
-            $identification = $params['documento de identidad'];
-            $date = $params['fecha de nacimiento'];
-            $degree = $params['grado a matricular'];
-            $family = $params['padre o acudiente'];
-            $identification = $params['documento de identidad'];
-            $phone = $params['teléfono'];
-            $campus = $params['sede educativa'];
+            
+            $nombreestudiante = $params['nombreestudiante'];
+            $documentodeidentidad = $params['documentodeidentidad'];
+            $fechanacimiento = $params['fechanacimiento'];
+            $gradoamatricular = $params['gradoamatricular'];
+            $padreoacudiente = $params['padreoacudiente'];
+            $documentoidentidad = $params['documentoidentidad'];
+            $telefono = $params['telefono'];
+            $sedeeducativa = $params['sedeeducativa'];
             $id = $params['id'];
+            
 
-            $update = " UPDATE matricula SET nombre ='$name', documento de identidad='$identification', fecha de nacimiento='$date', grado a matricular='$degree', padre o acudiente= '$family', documento de identidad='$identification', teléfono='$phone', sede educativa='$campus', WHERE id = '$id";
+            $update = " UPDATE matricula SET nombreestudiante ='$nombreestudiante', documentodeidentidad='$documentodeidentidad', fechanacimiento='$fechanacimiento', gradoamatricular='$gradoamatricular', padreoacudiente='$padreoacudiente', documentoidentidad='$documentoidentidad', telefono='$telefono', sedeeducativa='$sedeeducativa' WHERE id = $id";
             return mysqli_query($this->conn, $update);
     }
 

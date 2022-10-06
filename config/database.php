@@ -5,7 +5,7 @@ class Database
     public $user = 'root';//usuario de phpMyadmin
     public $pass = '';//contraseña de phpMyadmin
     public $db = 'estudiantes';//base de datos
-    private $conn;
+    public $conn;
 
     function __construct()
     {

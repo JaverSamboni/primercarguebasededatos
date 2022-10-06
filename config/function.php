@@ -11,13 +11,13 @@ function getFolderProject()
     return $root;
 
 }
-function saveImage($files)
+function saveImage($file)
 {
-    $file_name = str_replace(' ','', $files['image']['name']);
-    $file_tmp = $files['image']['tmp_name'];
+    $imageName = str_replace(' ','', $file['imagen']['name']);
+    $imgTmp = $file['imagen']['tmp_name'];
 
-    move_uploaded_file($file_tmp, $_SERVER['DOCUMENT_ROOT'] . getFolderProject() . '/images/' . $file_name);
-    return $file_name;
+    move_uploaded_file($imgTmp, $_SERVER['DOCUMENT_ROOT'] . getFolderProject() . '/images/' . $imageName);
+    return $imageName;
 }
 
 ?>
