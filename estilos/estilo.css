@@ -1,0 +1,147 @@
+header{
+    font-weight: bold;
+}
+
+body{
+    font-family: 'Poppins', sans-serif; /* FUENTE TIPOGRAFIA */
+    max-width: 900px; /* ANCHO */
+    margin: 0 auto; /* MARGEN */
+}
+
+nav{
+    width: 100%; /* ancho */
+    height: 160px; /* ALTO */
+    background-color:gray;
+}
+
+nav ul li {/* UBICACION ELEMENTOS BARRA */
+    list-style-type: none;
+    display: inline-block;
+    transition: o.8s all;
+    padding: 18px 20px;
+
+}
+
+nav ul li:hover{/* LOS BOTONES SE ILUMINEN */
+    background-color: white;
+
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: black;
+}
+
+h2,figure,ul{
+    margin: 0;
+}
+
+img{
+    max-width: 100%;
+}
+
+.seccion1{
+    background-color:rgba(142,213,72,0.27);
+   
+}
+
+/* UBICAR IMAGEN Y TEXTO UNO AL LADO DEL OTRO */
+.img{
+    width: 50px;
+    padding: 2px;
+}
+
+.texto{
+    width: 30px;
+    padding: 2px;
+   }
+
+
+article{
+    padding: 30px;
+    background-color: rgba(142,213,72,0.27);
+}
+
+
+article h1{
+    border-bottom: 1px solid black;
+
+}
+
+article h2{
+    border-bottom: 1px solid black;
+
+}
+
+.boton{
+    text-align: center;
+    font-weight: bold;
+    background-color: #aeb550;
+    padding: 10px;
+}
+
+.boton a{
+    text-decoration: none;
+    color: white;
+}
+
+.boton:hover{
+    background-color: #a1b38d;
+
+}
+
+.img-art{    /* AL COLOCAR EN HTML NO ME PERMITE AJUSTAR PAGINA AL REDUCIR */
+    max-width: 100%;
+}
+
+.cont-art{    /* AL COLOCAR EN HTML NO ME PERMITE AJUSTAR PAGINA AL REDUCIR */
+    width: 100px;
+    vertical-align: top;
+    text-align: justify;
+}
+
+footer{
+    background-color: #F0F3F4 ;
+    color: black;
+    line-height: 30px;
+    text-align: center;
+    padding: 15px;
+}
+footer div a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.seccion2{
+    background-color: #B5BBAF;
+    position: relative;
+}
+
+.mapa{
+    position: absolute;
+        left: 500px;
+}
+
+.seccion3{
+    text-decoration: none;
+    position: relative;
+        left: 100px;
+        font-weight: lighter;
+     
+}
+
+.seccion3, .mapa{
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.cajaadmin{
+    background-color: #F0F3F4;
+    
+}
+
+.box{
+    margin: 8%;
+    padding: 0%;
+}

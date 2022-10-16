@@ -29,7 +29,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])) {
 <body>
     <?php include('../menu.php') ?>
     <div class="container">
-        <h2 class="text-center mb-5"> Lista estudiantes </h2>
+        <h2 class="text-center mb-5"> Listado de estudiantes </h2>
 
         <div class="row">
             <?php
